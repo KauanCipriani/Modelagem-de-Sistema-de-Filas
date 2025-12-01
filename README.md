@@ -1,133 +1,125 @@
-...existing code...
-# Sistema de Fila — trabaio
+Sistema de Fila — Projeto
+📌 Resumo
 
-Resumo rápido
-- Script Python que simula atendimento em fila e gera uma imagem com a tabela de resultados (`tabela_resultados.png`).
-- Frontend opcional em `data-table-frontend` (React).
+Este projeto simula o funcionamento de um sistema de filas, calculando e exibindo:
 
-Requisitos
-- Windows
-- Python 3.8+ (recomendado)
-- pip
-- (opcional) Node.js + npm para o frontend
-- Git (para clonar/enviar para o GitHub)
+Intervalo médio entre chegadas
 
-Instalação e execução (PowerShell)
-1. Abra o PowerShell na pasta do projeto:
-   - No Explorer, abra `C:\Users\Kauan\Desktop\trabaio`, Shift + clique direito → "Abrir janela do PowerShell aqui".
+Duração média dos atendimentos
 
-2. Criar e ativar ambiente virtual:
-```powershell
+Tabela completa de funcionamento
+
+Tamanho médio da fila
+
+Tempo médio de espera
+
+O script gera também a imagem tabela_resultados.png com os cálculos.
+
+O repositório possui:
+
+Um script Python principal
+
+Um frontend opcional em React (/data-table-frontend)
+
+🚀 Como executar o projeto (Python)
+✅ Requisitos
+
+Windows
+
+Python 3.8+
+
+pip
+
+(Opcional) Node.js + npm — caso queira rodar o frontend
+
+Git
+
+📂 1. Abrir o projeto no PowerShell
+
+No Windows Explorer:
+
+Abra a pasta do projeto
+
+Shift + clique direito
+
+Clique em "Abrir janela do PowerShell aqui"
+
+🧪 2. Criar e ativar ambiente virtual
 python -m venv .venv
 .venv\Scripts\Activate.ps1
-```
 
-3. Instalar dependências Python:
-- Se existir `requirements.txt`:
-```powershell
+📦 3. Instalar dependências
+Se existir requirements.txt:
 pip install -r requirements.txt
-```
-- Senão, instalar matplotlib manualmente:
-```powershell
-pip install matplotlib
-```
 
-4. Executar o script principal:
-- Se o arquivo estiver nomeado `trabaio.py`:
-```powershell
+Se NÃO existir:
+pip install matplotlib
+
+▶️ 4. Executar o script principal
+
+Se o arquivo estiver nomeado trabaio.py:
+
 python trabaio.py
-```
-- Se o arquivo atualmente não tiver extensão, renomeie:
-```powershell
+
+
+Se o arquivo estiver sem extensão, renomeie:
+
 Rename-Item .\trabaio .\trabaio.py
 python .\trabaio.py
-```
 
-O programa pedirá:
-- Quantos clientes cadastrar
-- Horários de chegada (horas decimais, ex: `14.30` ou `14.5`)
-- Duração do atendimento em minutos
+📊 O que o programa vai pedir
 
-Ao final será mostrada a tabela no terminal e salva a imagem `tabela_resultados.png` na pasta do projeto.
+Durante a execução, o usuário deve informar:
 
-Commit e push para o GitHub
-```powershell
-git add .
-git commit -m "Adicionar projeto trabaio"
-git push -u origin main
-```
-Se o push for rejeitado porque há alterações remotas:
-```powershell
-git fetch origin
-git pull --rebase origin main
-# resolver conflitos se houver, depois:
-git push -u origin main
-```
+Quantidade de clientes
 
-Observações
-- Saída da imagem: `tabela_resultados.png`.
-- Ajuste formatos de entrada (ex.: `14.3` significa 14 horas e 18 minutos; prefira usar `14.50` para 14:30) ou padronize antes de rodar.
-- Use o terminal integrado do VS Code (View → Terminal) para executar comandos.
+Horários de chegada (em horas, ex.: 14.50 para 14h30)
 
----
+Duração do atendimento (em minutos)
 
-# Data Table Frontend
+Ao final, o programa:
 
-This project is a simple React application that allows users to input data and display it in a table format. The application consists of a form for data entry and a table to display the submitted data.
+Exibe os resultados no terminal
 
-## Project Structure
+Gera a imagem: tabela_resultados.png
 
-```
+🌐 Como rodar o frontend (opcional)
+1. Entrar na pasta:
+cd .\data-table-frontend
+
+2. Instalar dependências:
+npm install
+
+3. Rodar a aplicação:
+npm start
+
+4. Acessar no navegador:
+http://localhost:3000
+
+🔧 Estrutura do Projeto (Frontend)
 data-table-frontend
 ├── public
-│   └── index.html        # Main HTML file
+│   └── index.html
 ├── src
-│   ├── index.js          # Entry point for the React application
-│   ├── App.js            # Main App component
+│   ├── App.js
+│   ├── index.js
 │   ├── components
-│   │   ├── DataForm.js   # Component for data input form
-│   │   └── DataTable.js  # Component for displaying data in a table
+│   │   ├── DataForm.js
+│   │   └── DataTable.js
 │   ├── styles
-│   │   └── main.css      # CSS styles for the application
+│   │   └── main.css
 │   └── utils
-│       └── storage.js    # Utility functions for local storage
-├── package.json           # npm configuration file
-├── .gitignore             # Files to ignore by Git
-└── README.md              # Project documentation
-```
+│       └── storage.js
+└── package.json
 
-## Getting Started (Frontend)
+📤 Como enviar mudanças para o GitHub
+git add .
+git commit -m "Atualização do projeto"
+git push -u origin main
 
-To get started with the frontend, follow these steps:
 
-1. **Entrar na pasta do frontend:**
-```powershell
-cd .\data-table-frontend
-```
+Se o push der conflito:
 
-2. **Instalar dependências:**
-```powershell
-npm install
-```
-
-3. **Executar a aplicação:**
-```powershell
-npm start
-```
-
-4. **Abrir no navegador:**
-Navegue para `http://localhost:3000` para ver a aplicação.
-
-## Usage
-
-- Use the form to input data.
-- Submit the form to see the data displayed in the table below.
-- The application uses local storage to persist data between sessions.
-
-## Contributing
-
-Contributions are welcome! Please open an issue or submit a pull request for any enhancements or bug fixes.
-
-## License
-
-This project is licensed under the MIT License.
+git fetch origin
+git pull --rebase origin main
+git push -u origin main
