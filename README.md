@@ -1,102 +1,92 @@
-Sistema de Fila — Projeto
-📌 Resumo
+# Sistema de Fila — Projeto
 
-Este projeto simula o funcionamento de um sistema de filas, calculando e exibindo:
+📌 Resumo  
+Este projeto simula o funcionamento de um sistema de filas e gera uma imagem com os resultados (tabela_resultados.png). Calcula e exibe:
+- Intervalo médio entre chegadas
+- Duração média dos atendimentos
+- Tabela completa de funcionamento
+- Tamanho médio da fila
+- Tempo médio de espera
 
-Intervalo médio entre chegadas
+O repositório contém:
+- Script Python principal (código de simulação e geração de imagem)
+- Frontend opcional em React (`/data-table-frontend`)
 
-Duração média dos atendimentos
+---
 
-Tabela completa de funcionamento
+## ✅ Requisitos
+- Windows
+- Python 3.8+
+- pip
+- (Opcional) Node.js + npm — para rodar o frontend
+- Git
 
-Tamanho médio da fila
+---
 
-Tempo médio de espera
+## 🚀 Como executar (Python)
 
-O script gera também a imagem tabela_resultados.png com os cálculos.
+1) Abrir PowerShell na pasta do projeto  
+- No Explorer, abra a pasta do projeto, Shift + clique direito → "Abrir janela do PowerShell aqui"
 
-O repositório possui:
-
-Um script Python principal
-
-Um frontend opcional em React (/data-table-frontend)
-
-🚀 Como executar o projeto (Python)
-✅ Requisitos
-
-Windows
-
-Python 3.8+
-
-pip
-
-(Opcional) Node.js + npm — caso queira rodar o frontend
-
-Git
-
-📂 1. Abrir o projeto no PowerShell
-
-No Windows Explorer:
-
-Abra a pasta do projeto
-
-Shift + clique direito
-
-Clique em "Abrir janela do PowerShell aqui"
-
-🧪 2. Criar e ativar ambiente virtual
+2) Criar e ativar ambiente virtual:
+```powershell
 python -m venv .venv
 .venv\Scripts\Activate.ps1
+```
 
-📦 3. Instalar dependências
-Se existir requirements.txt:
+3) Instalar dependências:
+- Se existir `requirements.txt`:
+```powershell
 pip install -r requirements.txt
-
-Se NÃO existir:
+```
+- Senão:
+```powershell
 pip install matplotlib
+```
 
-▶️ 4. Executar o script principal
-
-Se o arquivo estiver nomeado trabaio.py:
-
+4) Executar o script principal:
+- Se o arquivo estiver nomeado `trabaio.py`:
+```powershell
 python trabaio.py
-
-
-Se o arquivo estiver sem extensão, renomeie:
-
+```
+- Se o arquivo estiver sem extensão (nome `trabaio`), renomeie e execute:
+```powershell
 Rename-Item .\trabaio .\trabaio.py
 python .\trabaio.py
+```
 
-📊 O que o programa vai pedir
+---
 
-Durante a execução, o usuário deve informar:
+## 📊 Entrada esperada durante a execução
+O programa pedirá:
+- Quantidade de clientes
+- Horários de chegada (em horas, ex.: `14.50` para 14h30)
+- Duração do atendimento (em minutos)
 
-Quantidade de clientes
+Saída:
+- Resultados impressos no terminal
+- Arquivo de imagem `tabela_resultados.png` com a tabela de resultados
 
-Horários de chegada (em horas, ex.: 14.50 para 14h30)
+---
 
-Duração do atendimento (em minutos)
-
-Ao final, o programa:
-
-Exibe os resultados no terminal
-
-Gera a imagem: tabela_resultados.png
-
-🌐 Como rodar o frontend (opcional)
-1. Entrar na pasta:
+## 🌐 Frontend (opcional)
+1. Entrar na pasta do frontend:
+```powershell
 cd .\data-table-frontend
-
+```
 2. Instalar dependências:
+```powershell
 npm install
-
+```
 3. Rodar a aplicação:
+```powershell
 npm start
+```
+4. Acessar:
+- http://localhost:3000
 
-4. Acessar no navegador:
-http://localhost:3000
-
-🔧 Estrutura do Projeto (Frontend)
+Estrutura mínima do frontend:
+```
 data-table-frontend
 ├── public
 │   └── index.html
@@ -111,15 +101,30 @@ data-table-frontend
 │   └── utils
 │       └── storage.js
 └── package.json
+```
 
-📤 Como enviar mudanças para o GitHub
+---
+
+## 📤 Enviar mudanças para o GitHub
+```powershell
 git add .
 git commit -m "Atualização do projeto"
 git push -u origin main
+```
 
-
-Se o push der conflito:
-
+Se ocorrer conflito ao push:
+```powershell
 git fetch origin
 git pull --rebase origin main
+# resolver conflitos, depois:
 git push -u origin main
+```
+
+---
+
+## Observações
+- Padronize entradas de horário (use `HH.MM`, por exemplo `14.50` para 14:30).  
+- A imagem `tabela_resultados.png` é salva na pasta do projeto após execução.  
+- Para dúvidas sobre execução no VS Code, use o terminal integrado (View → Terminal).
+
+Licença: escolha e adicione conforme necessário (ex.: MIT).
