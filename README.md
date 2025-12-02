@@ -128,3 +128,10 @@ git push -u origin main
 - Para dúvidas sobre execução no VS Code, use o terminal integrado (View → Terminal).
 
 Licença: escolha e adicione conforme necessário (ex.: MIT).
+
+## 👨‍💻 Integrantes do Grupo
+
+- Kauan Amélio Cipriani	      
+- Maria Cecilia	Schneider de Oliveira        
+- Vitor Hugo Konzen	        
+- Guilherme Depiné Neto    
